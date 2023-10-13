@@ -27,7 +27,8 @@ type Redis struct {
 }
 
 type Config struct {
-	Redis Redis
+	Redis      Redis
+	HTTPServer Server
 }
 
 func getFromEnvOrDefaultInt(key string, dftl int) int {
@@ -59,6 +60,10 @@ func FromEnv() *Config {
 				Port: getFromEnvOrDefaultInt("REDIS_PORT", 6379),
 			},
 			Channel: getFromEnvOrDefault("REDIS_VOTE_CHANNEL", "vote"),
+		},
+		HTTPServer: Server{
+			Host: getFromEnvOrDefault("SERVER_HOST", "localhost"),
+			Port: getFromEnvOrDefaultInt("SERVER_PORT", 8080),
 		},
 	}
 }
