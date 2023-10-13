@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dog vs Cat!</title>
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="content-container">
+            <div id="content-container-center">
+                <h3>Dog vs Cat!</h3>
+                <form id="choice" name='form' method="POST" action="/">
+                    <button id="Cat" type="submit" name="vote" class="a" value="Cat">Cat</button>
+                    <button id="Dog" type="submit" name="vote" class="b" value="Dog">Dog</button>
+                </form>
+                <div id="tip">
+                    (Tip: you can change your vote)
+                </div>
+                <div id="hostname">
+                    Processed by container ID {{.hostname}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

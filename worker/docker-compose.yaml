@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass test
+    ports:
+      - "6379:6379"
+  postgres:
+    image: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_USER: "test"
+      POSTGRES_DB: "votes"
+    ports:
+      - "5432:5432"
